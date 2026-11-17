@@ -15,7 +15,7 @@
         --card: #ffffff;
         --card2: #fff1dd;
         --ink: #37312a;
-        --ink-soft: #7a7163;
+        --ink-soft: #665c4d;
         --line: #f0dfc8;
         --accent: #e4572e;
         --accent-ink: #ffffff;
@@ -70,56 +70,60 @@
       button { cursor: pointer; }
       button, [role="button"], select, input:not([type="checkbox"], [type="radio"]) { min-height: 2.75rem; }
 
-      .wrap { max-width: 760px; margin: 0 auto; padding: 16px 14px 56px; }
+      .wrap { max-width: 760px; margin: 0 auto; padding: 12px 14px 40px; }
 
       /* 名前バー */
-      .namebar { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
-      .name-label { flex: 1 1 auto; font-size: 20px; font-weight: 800; min-width: 0; overflow-wrap: anywhere; }
+      .namebar { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+      .name-label { flex: 1 1 auto; font-size: 18px; font-weight: 800; min-width: 0; overflow-wrap: anywhere; }
       .name-change-btn {
         flex: 0 0 auto; border: 2px solid var(--line); background: var(--card);
-        border-radius: 999px; padding: 8px 16px; font-weight: 800; font-size: 14.5px;
-        min-height: 46px; box-shadow: var(--shadow);
+        border-radius: 999px; padding: 5px 14px; font-weight: 800; font-size: 14px;
+        min-height: 40px; box-shadow: var(--shadow);
       }
       #nameOverlay { z-index: 90; }
 
       /* 日付バー */
       .datebar {
-        display: flex; align-items: center; gap: 10px;
-        background: var(--card); border: 2px solid var(--line); border-radius: 20px;
-        padding: 10px 12px; box-shadow: var(--shadow);
+        display: flex; align-items: center; gap: 8px;
+        background: var(--card); border: 2px solid var(--line); border-radius: 16px;
+        padding: 7px 10px; box-shadow: var(--shadow);
       }
       .datebar .nav-btn {
-        flex: 0 0 auto; width: 52px; height: 52px; border-radius: 16px;
+        flex: 0 0 auto; width: 46px; height: 46px; border-radius: 13px;
         border: 2px solid var(--line); background: var(--card2);
-        font-size: 22px; font-weight: 800; line-height: 1;
+        font-size: 21px; font-weight: 800; line-height: 1;
       }
       .datebar .nav-btn:active { transform: scale(0.96); }
       .date-center { flex: 1 1 auto; text-align: center; min-width: 0; }
-      .date-big { font-size: 24px; font-weight: 800; line-height: 1.25; }
-      .date-sub { font-size: 14px; color: var(--ink-soft); font-weight: 700; }
+      .date-big { font-size: 21px; font-weight: 800; line-height: 1.2; }
+      .date-sub { font-size: 13px; color: var(--ink-soft); font-weight: 700; }
       .today-btn {
         flex: 0 0 auto; border: none; border-radius: 999px;
         background: var(--accent); color: var(--accent-ink);
-        font-weight: 800; padding: 8px 16px; font-size: 15px;
+        font-weight: 800; padding: 6px 14px; font-size: 14.5px;
       }
 
       /* 合計カード */
       .summary {
-        margin-top: 16px; background: var(--card); border: 2px solid var(--line);
-        border-radius: 24px; padding: 18px; box-shadow: var(--shadow);
+        margin-top: 12px; background: var(--card); border: 2px solid var(--line);
+        border-radius: 18px; padding: 13px 15px 15px; box-shadow: var(--shadow);
       }
-      .summary h2 { margin: 0 0 4px; font-size: 19px; font-weight: 800; }
+      .summary h2 { margin: 0 0 2px; font-size: 17px; font-weight: 800; }
       .kcal-row { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
-      .kcal-num { font-size: 46px; font-weight: 800; color: var(--accent); line-height: 1.1; }
-      .kcal-unit { font-size: 18px; font-weight: 800; }
-      .kcal-note { font-size: 14px; color: var(--ink-soft); font-weight: 700; }
-      .bars { margin-top: 14px; display: grid; gap: 13px; }
-      .bar-row { display: grid; gap: 4px; }
+      .kcal-num { font-size: 36px; font-weight: 800; color: var(--accent); line-height: 1.1; }
+      .kcal-unit { font-size: 16px; font-weight: 800; }
+      .kcal-note { font-size: 13.5px; color: var(--ink-soft); font-weight: 700; }
+      .bars { margin-top: 10px; display: grid; gap: 9px; }
+      @media (min-width: 620px) {
+        .bars { grid-template-columns: 1fr 1fr; column-gap: 24px; }
+        .bars .bar-row:first-child { grid-column: 1 / -1; }
+      }
+      .bar-row { display: grid; gap: 3px; }
       .bar-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
-      .bar-name { font-weight: 800; font-size: 16px; }
-      .bar-val { font-size: 15px; font-weight: 700; color: var(--ink-soft); }
-      .bar-val b { color: var(--ink); font-size: 17px; }
-      .bar-track { height: 16px; border-radius: 999px; background: var(--bar-track); overflow: hidden; }
+      .bar-name { font-weight: 800; font-size: 15px; }
+      .bar-val { font-size: 13.5px; font-weight: 700; color: var(--ink-soft); }
+      .bar-val b { color: var(--ink); font-size: 15.5px; }
+      .bar-track { height: 10px; border-radius: 999px; background: var(--bar-track); overflow: hidden; }
       .bar-fill { height: 100%; border-radius: 999px; transition: width 0.35s ease; }
       .fill-energy { background: var(--accent); }
       .fill-protein { background: var(--pink); }
@@ -130,87 +134,87 @@
       @media (prefers-color-scheme: dark) { .fill-salt { background: #b49ae0; } }
 
       /* よく食べるもの */
-      .quick { margin-top: 16px; }
-      .quick h2, .history h2 { font-size: 19px; font-weight: 800; margin: 0 0 10px; }
-      .quick-scroll { display: flex; gap: 10px; flex-wrap: wrap; }
+      .quick { margin-top: 14px; }
+      .quick h2, .history h2 { font-size: 17px; font-weight: 800; margin: 0 0 8px; }
+      .quick-scroll { display: flex; gap: 8px; flex-wrap: wrap; }
       .quick-btn {
         border: 2px solid var(--line); background: var(--card); border-radius: 999px;
-        padding: 10px 18px; font-weight: 800; font-size: 16px; box-shadow: var(--shadow);
-        min-height: 52px;
+        padding: 6px 14px; font-weight: 800; font-size: 15px; box-shadow: var(--shadow);
+        min-height: 42px;
       }
       .quick-btn:active { transform: scale(0.97); }
-      .quick-empty { color: var(--ink-soft); font-weight: 700; font-size: 15px; }
+      .quick-empty { color: var(--ink-soft); font-weight: 700; font-size: 14.5px; }
 
       /* 食事カード */
       .meal {
-        margin-top: 16px; background: var(--card); border: 2px solid var(--line);
-        border-radius: 24px; padding: 16px 18px 18px; box-shadow: var(--shadow);
+        margin-top: 12px; background: var(--card); border: 2px solid var(--line);
+        border-radius: 18px; padding: 11px 14px 13px; box-shadow: var(--shadow);
       }
-      .meal-head { display: flex; align-items: center; gap: 10px; }
+      .meal-head { display: flex; align-items: center; gap: 9px; }
       .meal-icon {
-        width: 46px; height: 46px; border-radius: 14px; flex: 0 0 auto;
+        width: 38px; height: 38px; border-radius: 11px; flex: 0 0 auto;
         display: flex; align-items: center; justify-content: center;
       }
-      .meal-icon svg { width: 28px; height: 28px; }
+      .meal-icon svg { width: 23px; height: 23px; }
       .icon-breakfast { background: var(--yellow-soft); color: var(--yellow); }
       .icon-lunch { background: var(--accent-soft); color: var(--accent); }
       .icon-dinner { background: var(--blue-soft); color: var(--blue); }
       .icon-snack { background: var(--pink-soft); color: var(--pink); }
-      .meal-title { font-size: 21px; font-weight: 800; flex: 1 1 auto; }
-      .meal-kcal { font-weight: 800; color: var(--ink-soft); font-size: 16px; white-space: nowrap; }
-      .meal-kcal b { color: var(--ink); font-size: 19px; }
-      .entries { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 8px; }
+      .meal-title { font-size: 19px; font-weight: 800; flex: 1 1 auto; }
+      .meal-kcal { font-weight: 800; color: var(--ink-soft); font-size: 15px; white-space: nowrap; }
+      .meal-kcal b { color: var(--ink); font-size: 17px; }
+      .entries { list-style: none; margin: 9px 0 0; padding: 0; display: grid; gap: 6px; }
       .entry {
-        display: flex; align-items: center; gap: 10px;
-        background: var(--card2); border-radius: 16px; padding: 10px 12px;
+        display: flex; align-items: center; gap: 9px;
+        background: var(--card2); border-radius: 12px; padding: 7px 10px;
       }
       .entry-main { flex: 1 1 auto; min-width: 0; }
-      .entry-name { font-weight: 800; font-size: 17px; }
-      .entry-sub { font-size: 13.5px; color: var(--ink-soft); font-weight: 700; }
-      .entry-kcal { font-weight: 800; white-space: nowrap; }
+      .entry-name { font-weight: 800; font-size: 16px; line-height: 1.35; }
+      .entry-sub { font-size: 13px; color: var(--ink-soft); font-weight: 700; }
+      .entry-kcal { font-weight: 800; white-space: nowrap; font-size: 15.5px; }
       .del-btn {
-        flex: 0 0 auto; width: 44px; height: 44px; border-radius: 12px;
+        flex: 0 0 auto; width: 40px; height: 40px; border-radius: 10px;
         border: none; background: transparent; color: var(--danger);
-        font-size: 20px; font-weight: 800; line-height: 1;
+        font-size: 19px; font-weight: 800; line-height: 1;
       }
       .del-btn:active { background: var(--accent-soft); }
-      .meal-empty { color: var(--ink-soft); font-weight: 700; margin: 12px 0 0; font-size: 15px; }
+      .meal-empty { color: var(--ink-soft); font-weight: 700; margin: 9px 0 0; font-size: 14.5px; }
       .add-btn {
-        margin-top: 14px; width: 100%; min-height: 58px;
-        border: 3px dashed var(--accent); border-radius: 18px;
+        margin-top: 10px; width: 100%; min-height: 46px;
+        border: 2px dashed var(--accent); border-radius: 13px;
         background: var(--accent-soft); color: var(--accent);
-        font-size: 19px; font-weight: 800;
+        font-size: 17px; font-weight: 800;
       }
       .add-btn:active { transform: scale(0.99); }
 
       /* 履歴 */
-      .history { margin-top: 26px; }
-      .history-list { display: grid; gap: 10px; }
+      .history { margin-top: 20px; }
+      .history-list { display: grid; gap: 8px; }
       .history-item {
         display: flex; align-items: center; gap: 10px; text-align: left; width: 100%;
-        background: var(--card); border: 2px solid var(--line); border-radius: 18px;
-        padding: 12px 16px; box-shadow: var(--shadow); min-height: 60px;
+        background: var(--card); border: 2px solid var(--line); border-radius: 14px;
+        padding: 9px 14px; box-shadow: var(--shadow); min-height: 50px;
       }
-      .history-item .h-date { font-weight: 800; font-size: 17px; flex: 1 1 auto; }
-      .history-item .h-meta { color: var(--ink-soft); font-weight: 700; font-size: 15px; white-space: nowrap; }
+      .history-item .h-date { font-weight: 800; font-size: 16px; flex: 1 1 auto; }
+      .history-item .h-meta { color: var(--ink-soft); font-weight: 700; font-size: 14px; white-space: nowrap; }
       .history-item.now { border-color: var(--accent); }
       .note {
-        margin-top: 26px; font-size: 14px; color: var(--ink-soft); font-weight: 500;
-        background: var(--card); border: 2px solid var(--line); border-radius: 18px; padding: 14px 16px;
+        margin-top: 20px; font-size: 13.5px; color: var(--ink-soft); font-weight: 500; line-height: 1.55;
+        background: var(--card); border: 2px solid var(--line); border-radius: 14px; padding: 11px 14px;
       }
-      .note p { margin: 0 0 6px; }
+      .note p { margin: 0 0 4px; }
       .note p:last-child { margin-bottom: 0; }
       .export-open-btn {
-        margin-top: 14px; width: 100%; min-height: 58px;
-        border: none; border-radius: 18px;
+        margin-top: 12px; width: 100%; min-height: 50px;
+        border: none; border-radius: 14px;
         background: var(--green); color: #fff;
-        font-size: 19px; font-weight: 800; box-shadow: var(--shadow);
+        font-size: 17px; font-weight: 800; box-shadow: var(--shadow);
       }
       @media (prefers-color-scheme: dark) { .export-open-btn { color: #12240f; } }
       .export-open-btn:active { transform: scale(0.99); }
       .export-btn {
-        width: 100%; min-height: 62px; border-radius: 18px; margin-top: 12px;
-        font-size: 19px; font-weight: 800;
+        width: 100%; min-height: 54px; border-radius: 14px; margin-top: 10px;
+        font-size: 17px; font-weight: 800;
       }
       .export-btn.print { border: none; background: var(--blue); color: #fff; }
       @media (prefers-color-scheme: dark) { .export-btn.print { color: #0e2233; } }
@@ -253,77 +257,77 @@
       .overlay.open { display: flex; }
       .sheet {
         background: var(--bg); width: 100%; max-width: 760px; max-height: 92dvh;
-        border-radius: 26px 26px 0 0; padding: 18px 16px calc(18px + env(safe-area-inset-bottom));
+        border-radius: 22px 22px 0 0; padding: 14px 14px calc(14px + env(safe-area-inset-bottom));
         overflow-y: auto; overscroll-behavior: contain;
       }
       @media (min-width: 700px) {
         .overlay { align-items: center; padding: 20px; }
-        .sheet { border-radius: 26px; }
+        .sheet { border-radius: 22px; }
       }
-      .sheet-head { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
-      .sheet-title { font-size: 21px; font-weight: 800; flex: 1 1 auto; }
+      .sheet-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+      .sheet-title { font-size: 19px; font-weight: 800; flex: 1 1 auto; }
       .close-btn {
-        width: 48px; height: 48px; border-radius: 14px; border: 2px solid var(--line);
-        background: var(--card); font-size: 20px; font-weight: 800; line-height: 1; flex: 0 0 auto;
+        width: 44px; height: 44px; border-radius: 12px; border: 2px solid var(--line);
+        background: var(--card); font-size: 19px; font-weight: 800; line-height: 1; flex: 0 0 auto;
       }
 
       /* 食品えらび */
       .search-input {
-        width: 100%; min-height: 56px; border: 2px solid var(--line); border-radius: 16px;
-        background: var(--card); padding: 10px 16px; font-size: 18px; font-weight: 700;
+        width: 100%; min-height: 50px; border: 2px solid var(--line); border-radius: 13px;
+        background: var(--card); padding: 8px 14px; font-size: 17px; font-weight: 700;
       }
       .search-input:focus { outline: 3px solid var(--accent-soft); border-color: var(--accent); }
-      .chips { display: flex; gap: 8px; flex-wrap: wrap; margin: 14px 0 6px; }
+      .chips { display: flex; gap: 7px; flex-wrap: wrap; margin: 11px 0 4px; }
       .chip {
         border: 2px solid var(--line); background: var(--card); border-radius: 999px;
-        padding: 8px 16px; font-weight: 800; font-size: 15.5px; min-height: 48px;
+        padding: 5px 13px; font-weight: 800; font-size: 15px; min-height: 42px;
       }
       .chip.on { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
-      .food-list { display: grid; gap: 8px; margin-top: 10px; }
+      .food-list { display: grid; gap: 6px; margin-top: 8px; }
       .food-btn {
         display: flex; align-items: center; gap: 10px; text-align: left; width: 100%;
-        background: var(--card); border: 2px solid var(--line); border-radius: 16px;
-        padding: 12px 16px; min-height: 62px;
+        background: var(--card); border: 2px solid var(--line); border-radius: 13px;
+        padding: 9px 14px; min-height: 54px;
       }
       .food-btn:active { border-color: var(--accent); }
-      .food-btn .f-name { font-weight: 800; font-size: 17.5px; flex: 1 1 auto; }
-      .food-btn .f-info { color: var(--ink-soft); font-weight: 700; font-size: 14px; text-align: right; white-space: nowrap; }
-      .food-btn .f-info b { color: var(--accent); font-size: 16px; }
-      .no-result { text-align: center; color: var(--ink-soft); font-weight: 700; padding: 24px 0; }
+      .food-btn .f-name { font-weight: 800; font-size: 16.5px; flex: 1 1 auto; }
+      .food-btn .f-info { color: var(--ink-soft); font-weight: 700; font-size: 13px; text-align: right; white-space: nowrap; line-height: 1.45; }
+      .food-btn .f-info b { color: var(--accent); font-size: 15px; }
+      .no-result { text-align: center; color: var(--ink-soft); font-weight: 700; padding: 18px 0; }
 
       /* 分量えらび */
-      .qty-food { font-size: 24px; font-weight: 800; text-align: center; margin: 2px 0 0; }
-      .qty-unit-note { text-align: center; color: var(--ink-soft); font-weight: 700; font-size: 15px; margin-top: 2px; }
-      .stepper { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 18px 0 6px; }
+      .qty-food { font-size: 21px; font-weight: 800; text-align: center; margin: 2px 0 0; }
+      .qty-unit-note { text-align: center; color: var(--ink-soft); font-weight: 700; font-size: 14px; margin-top: 2px; }
+      .stepper { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 13px 0 4px; }
       .step-btn {
-        width: 64px; height: 64px; border-radius: 20px; border: none;
-        background: var(--accent); color: var(--accent-ink); font-size: 30px; font-weight: 800; line-height: 1;
+        width: 56px; height: 56px; border-radius: 17px; border: none;
+        background: var(--accent); color: var(--accent-ink); font-size: 27px; font-weight: 800; line-height: 1;
       }
       .step-btn:active { transform: scale(0.95); }
       .step-btn:disabled { opacity: 0.35; }
-      .step-val { font-size: 30px; font-weight: 800; min-width: 130px; text-align: center; }
-      .step-val small { font-size: 17px; }
-      .gram-row { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 10px; font-weight: 800; }
+      .step-val { font-size: 27px; font-weight: 800; min-width: 120px; text-align: center; }
+      .step-val small { font-size: 16px; }
+      .gram-row { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 8px; font-weight: 800; }
       .gram-input {
-        width: 110px; min-height: 54px; text-align: center; font-size: 20px; font-weight: 800;
-        border: 2px solid var(--line); border-radius: 14px; background: var(--card);
+        width: 104px; min-height: 48px; text-align: center; font-size: 19px; font-weight: 800;
+        border: 2px solid var(--line); border-radius: 12px; background: var(--card);
       }
       .preview {
-        margin-top: 18px; background: var(--card); border: 2px solid var(--line);
-        border-radius: 18px; padding: 14px 16px;
+        margin-top: 14px; background: var(--card); border: 2px solid var(--line);
+        border-radius: 14px; padding: 11px 14px;
       }
-      .preview .p-kcal { text-align: center; font-size: 19px; font-weight: 800; }
-      .preview .p-kcal b { font-size: 32px; color: var(--accent); }
-      .preview-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 10px; }
-      .preview-cell { background: var(--card2); border-radius: 12px; padding: 8px 6px; text-align: center; }
-      .preview-cell .pc-name { font-size: 13px; font-weight: 800; color: var(--ink-soft); }
-      .preview-cell .pc-val { font-size: 17px; font-weight: 800; }
-      .meal-pick { margin-top: 18px; }
-      .meal-pick .mp-label { font-weight: 800; margin-bottom: 8px; }
+      .preview .p-kcal { text-align: center; font-size: 17px; font-weight: 800; }
+      .preview .p-kcal b { font-size: 28px; color: var(--accent); }
+      .preview-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 8px; }
+      .preview-cell { background: var(--card2); border-radius: 10px; padding: 6px 5px; text-align: center; }
+      .preview-cell .pc-name { font-size: 12.5px; font-weight: 800; color: var(--ink-soft); }
+      .preview-cell .pc-val { font-size: 16px; font-weight: 800; }
+      .meal-pick { margin-top: 14px; }
+      .meal-pick .mp-label { font-weight: 800; margin-bottom: 6px; }
       .meal-pick .chips { margin: 0; }
       .confirm-btn {
-        margin-top: 20px; width: 100%; min-height: 62px; border: none; border-radius: 18px;
-        background: var(--accent); color: var(--accent-ink); font-size: 20px; font-weight: 800;
+        margin-top: 16px; width: 100%; min-height: 54px; border: none; border-radius: 14px;
+        background: var(--accent); color: var(--accent-ink); font-size: 18px; font-weight: 800;
       }
       .confirm-btn:active { transform: scale(0.99); }
 
@@ -548,27 +552,27 @@
     </div>
 
     <style>
-      .cf-label { display: block; font-weight: 800; margin: 12px 0 6px; font-size: 15.5px; }
-      .cf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px; margin-top: 6px; }
-      .cf-num { min-height: 54px; }
+      .cf-label { display: block; font-weight: 800; margin: 10px 0 5px; font-size: 15px; }
+      .cf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 12px; margin-top: 4px; }
+      .cf-num { min-height: 48px; }
       .notfound {
-        background: var(--card); border: 2px solid var(--line); border-radius: 18px;
-        padding: 18px 16px; text-align: center; margin-top: 10px;
+        background: var(--card); border: 2px solid var(--line); border-radius: 14px;
+        padding: 14px 14px; text-align: center; margin-top: 8px;
       }
-      .notfound .nf-title { font-size: 19px; font-weight: 800; margin-bottom: 6px; }
-      .notfound .nf-sub { color: var(--ink-soft); font-weight: 700; font-size: 15px; margin-bottom: 12px; }
-      .nf-candidates { display: grid; gap: 8px; text-align: left; margin-bottom: 14px; }
-      .nf-candidates .cand-label { font-weight: 800; text-align: center; color: var(--ink-soft); font-size: 15px; }
-      .nf-or { font-weight: 800; color: var(--ink-soft); margin: 10px 0; }
+      .notfound .nf-title { font-size: 17.5px; font-weight: 800; margin-bottom: 4px; }
+      .notfound .nf-sub { color: var(--ink-soft); font-weight: 700; font-size: 14px; margin-bottom: 10px; }
+      .nf-candidates { display: grid; gap: 6px; text-align: left; margin-bottom: 12px; }
+      .nf-candidates .cand-label { font-weight: 800; text-align: center; color: var(--ink-soft); font-size: 14px; }
+      .nf-or { font-weight: 800; color: var(--ink-soft); margin: 8px 0; }
       .nf-reg-btn {
-        width: 100%; min-height: 58px; border: none; border-radius: 16px;
-        background: var(--green); color: #fff; font-size: 18px; font-weight: 800;
+        width: 100%; min-height: 50px; border: none; border-radius: 13px;
+        background: var(--green); color: #fff; font-size: 17px; font-weight: 800;
       }
       @media (prefers-color-scheme: dark) { .nf-reg-btn { color: #12240f; background: var(--green); } }
       .reg-link-btn {
-        width: 100%; margin-top: 12px; min-height: 54px; border-radius: 16px;
+        width: 100%; margin-top: 10px; min-height: 48px; border-radius: 13px;
         border: 2px dashed var(--green); background: var(--green-soft); color: var(--green);
-        font-size: 16.5px; font-weight: 800;
+        font-size: 15.5px; font-weight: 800;
       }
       .food-btn .f-del {
         flex: 0 0 auto; border: none; background: var(--accent-soft); color: var(--danger);
